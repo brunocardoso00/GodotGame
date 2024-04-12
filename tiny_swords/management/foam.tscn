@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://q76ldp1jauox"]
+
+[ext_resource type="Texture2D" uid="uid://bwi6g3t30y74o" path="res://tiny_swords/terrain/Foam.png" id="1_uh1we"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mb4d"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ogl6"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1vy3"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgnn5"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx36v"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ycvu"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frijm"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oif43"]
+atlas = ExtResource("1_uh1we")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccj6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mb4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ogl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1vy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgnn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx36v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ycvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frijm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oif43")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Foam" type="AnimatedSprite2D"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_ccj6g")
+animation = &"idle"
+frame_progress = 0.901623

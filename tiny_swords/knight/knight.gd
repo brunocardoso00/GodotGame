@@ -2,17 +2,15 @@ extends CharacterBody2D
 
 @export var move_speed: float = 250
 @export var damage: int = 1
-@export var health: int = 3
+@export var health: int = 10
 
 @onready var attack_area_colision: CollisionShape2D = get_node("AttackArea/Collision")
 @onready var texture: Sprite2D = get_node("Texture")
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var auxAnimationPlayer: AnimationPlayer = get_node("AuxAnimationPlayer")
 
-
 var can_attack: bool = true
 var can_die: bool = false
-
 
 func _physics_process(_delta: float) -> void:
 	if can_attack == false or can_die:
@@ -60,17 +58,15 @@ func on_animation_animation_finished(anim_name: String) -> void:
 		"attack":
 			can_attack = true
 
-
 func on_attack_area_body_entered(body)-> void:
 	body.update_health(damage)
 	
-	
 func update_health(value: int) -> void:
 	health -= value
-	print(health)
+	print("Knight Health:"+str(health))
 	if health <= 0:
-		can_die = true
 		animation.play("death")
+		can_die = true
 		attack_area_colision.set_deferred("disabled",true)
 		return
 	auxAnimationPlayer.play("hit")
